@@ -1,0 +1,1364 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Painel do professor - Sala Virtual."
+    >
+
+    <title>Professor | Sala Virtual</title>
+
+    <link
+        rel="stylesheet"
+        href="../css/style.css"
+    >
+
+</head>
+
+<body
+    class="dashboard-page professor-page"
+    data-user-type="professor"
+>
+
+    <!-- =========================================================
+         CABEÇALHO
+         ========================================================= -->
+
+    <header class="dashboard-header">
+
+        <div class="header-content">
+
+            <a
+                href="professor.html"
+                class="dashboard-brand"
+                aria-label="Ir para o início"
+            >
+
+                    <img
+                        src="../png-transparent-computer-icons-newspaper-reading-book-text-reading-share-icon (1).png"
+                        alt="Logo Sala Virtual"
+                        class="logo-image"
+                    >
+
+                <span class="dashboard-brand-text">
+
+                    <strong>
+                        Sala Virtual
+                    </strong>
+
+                    <small>
+                        Ciências e Biologia
+                    </small>
+
+                </span>
+
+            </a>
+
+
+            <!-- Navegação principal -->
+            <nav
+                class="main-navigation"
+                aria-label="Navegação principal"
+            >
+
+                <a
+                    href="#inicio"
+                    class="nav-link active"
+                    data-section="inicio"
+                >
+                    Início
+                </a>
+
+                <a
+                    href="#turmas"
+                    class="nav-link"
+                    data-section="turmas"
+                >
+                    Turmas
+                </a>
+
+                <a
+                    href="#materiais"
+                    class="nav-link"
+                    data-section="materiais"
+                >
+                    Materiais
+                </a>
+
+                <a
+                    href="#avisos"
+                    class="nav-link"
+                    data-section="avisos"
+                >
+                    Avisos
+                </a>
+
+            </nav>
+
+
+            <!-- Área do usuário -->
+            <div class="header-user">
+
+                <a
+                    href="#perfil"
+                    class="user-menu-button"
+                    data-page-section="perfil"
+                    aria-label="Abrir perfil"
+                >
+
+                    <img
+                        id="header-profile-avatar"
+                        src="../assets/default-avatar.png"
+                        alt="Foto de Perfil"
+                        class="header-profile-avatar"
+                    >
+
+                    <span class="user-name" id="header-prof-name">
+                        Paulo
+                    </span>
+
+                </a>
+
+                <button
+                    type="button"
+                    class="secondary-button"
+                    data-action="edit-profile"
+                    id="btn-edit-profile-header"
+                    data-page-section="perfil"
+                >
+                    Editar perfil
+                </button>
+
+
+                <button
+                    type="button"
+                    class="logout-button"
+                    data-logout
+                >
+                    Sair
+                </button>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- =========================================================
+         CONTEÚDO PRINCIPAL
+         ========================================================= -->
+
+    <main class="dashboard-main">
+
+        <!-- =====================================================
+             INÍCIO
+             ===================================================== -->
+
+        <section
+            id="inicio"
+            class="dashboard-section active-section"
+            data-page-section="inicio"
+        >
+
+            <div class="page-heading">
+
+                <div>
+
+                    <span class="section-label">
+                        PAINEL DO PROFESSOR
+                    </span>
+
+                    <h1>
+                        Olá, Paulo
+                    </h1>
+
+                    <p>
+                        Gerencie suas turmas, materiais e informações
+                        da Sala Virtual.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- Resumo -->
+            <section
+                class="overview-grid"
+                aria-label="Resumo da plataforma"
+            >
+
+                <article class="overview-card">
+
+                    <span class="overview-icon">
+                        T
+                    </span>
+
+                    <div>
+
+                        <span>
+                            Turmas
+                        </span>
+
+                        <strong
+                            id="count-turmas"
+                            data-stat="classes"
+                        >
+                            0
+                        </strong>
+
+                    </div>
+
+                </article>
+
+
+                <article class="overview-card">
+
+                    <span class="overview-icon">
+                        M
+                    </span>
+
+                    <div>
+
+                        <span>
+                            Materiais
+                        </span>
+
+                        <strong
+                            id="count-materiais"
+                            data-stat="materials"
+                        >
+                            0
+                        </strong>
+
+                    </div>
+
+                </article>
+
+
+                <article class="overview-card">
+
+                    <span class="overview-icon">
+                        A
+                    </span>
+
+                    <div>
+
+                        <span>
+                            Avisos
+                        </span>
+
+                        <strong
+                            id="count-avisos"
+                            data-stat="announcements"
+                        >
+                            0
+                        </strong>
+
+                    </div>
+
+                </article>
+
+            </section>
+
+
+            <!-- Turmas recentes -->
+            <section class="dashboard-block">
+
+                <div class="block-header">
+
+                    <div>
+
+                        <span class="section-label">
+                            ORGANIZAÇÃO
+                        </span>
+
+                        <h2>
+                            Suas turmas
+                        </h2>
+
+                    </div>
+
+                    <button
+                        type="button"
+                        class="secondary-button"
+                        data-navigate-section="turmas"
+                    >
+                        Ver todas
+                    </button>
+
+                </div>
+
+
+                <div
+                    id="teacher-class-list"
+                    class="class-grid"
+                    data-list="classes"
+                >
+
+                    <!--
+                        O JavaScript poderá inserir as turmas aqui.
+                    -->
+
+                </div>
+
+            </section>
+
+
+            <!-- Ações -->
+            <section class="dashboard-block">
+
+                <div class="block-header">
+
+                    <div>
+
+                        <span class="section-label">
+                            GERENCIAMENTO
+                        </span>
+
+                        <h2>
+                            Ações rápidas
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div class="quick-actions">
+
+                    <button
+                        type="button"
+                        class="quick-action"
+                        data-action="new-class"
+                        id="btn-quick-class"
+                    >
+
+                        <span>
+                            +
+                        </span>
+
+                        <strong>
+                            Nova turma
+                        </strong>
+
+                        <small>
+                            Criar uma nova turma
+                        </small>
+
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="quick-action"
+                        data-action="new-material"
+                        id="btn-quick-material"
+                    >
+
+                        <span>
+                            +
+                        </span>
+
+                        <strong>
+                            Novo material
+                        </strong>
+
+                        <small>
+                            Adicionar arquivo ou link
+                        </small>
+
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="quick-action"
+                        data-action="new-announcement"
+                        id="btn-quick-announcement"
+                    >
+
+                        <span>
+                            +
+                        </span>
+
+                        <strong>
+                            Novo aviso
+                        </strong>
+
+                        <small>
+                            Publicar para os estudantes
+                        </small>
+
+                    </button>
+
+                </div>
+
+            </section>
+
+        </section>
+
+
+        <!-- =====================================================
+             TURMAS
+             ===================================================== -->
+
+        <section
+            id="turmas"
+            class="dashboard-section"
+            data-page-section="turmas"
+            hidden
+        >
+
+            <div class="page-heading">
+
+                <div>
+
+                    <span class="section-label">
+                        ORGANIZAÇÃO
+                    </span>
+
+                    <h1>
+                        Turmas
+                    </h1>
+
+                    <p>
+                        Organize suas turmas e salas de aula.
+                    </p>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    class="primary-button"
+                    data-action="new-class"
+                >
+                    Nova turma
+                </button>
+
+            </div>
+
+
+            <div
+                id="classes-container"
+                class="class-grid"
+                data-list="classes"
+            >
+            </div>
+
+
+            <!-- Formulário de turma -->
+            <dialog
+                id="class-dialog"
+                class="modal"
+            >
+
+                <form
+                    method="dialog"
+                    id="class-form"
+                    class="modal-content"
+                >
+
+                    <div class="modal-header">
+
+                        <div>
+
+                            <span class="section-label">
+                                TURMA
+                            </span>
+
+                            <h2 id="class-dialog-title">
+                                Criar turma
+                            </h2>
+
+                        </div>
+
+                        <button
+                            type="button"
+                            class="modal-close"
+                            data-close-dialog
+                        >
+                            ×
+                        </button>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="class-name">
+                            Nome da turma
+                        </label>
+
+                        <input
+                            type="text"
+                            id="class-name"
+                            name="class-name"
+                            placeholder="Ex.: 1º Ano A"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="class-school">
+                            Escola
+                        </label>
+
+                        <input
+                            type="text"
+                            id="class-school"
+                            name="class-school"
+                            placeholder="Nome da escola"
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="class-description">
+                            Descrição
+                        </label>
+
+                        <textarea
+                            id="class-description"
+                            name="class-description"
+                            rows="4"
+                            placeholder="Descreva a turma..."
+                        ></textarea>
+
+                    </div>
+
+
+                    <div class="modal-actions">
+
+                        <button
+                            type="button"
+                            class="secondary-button"
+                            data-close-dialog
+                        >
+                            Cancelar
+                        </button>
+
+                        <button
+                            type="submit"
+                            class="primary-button"
+                        >
+                            Salvar turma
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </dialog>
+
+        </section>
+
+
+        <!-- =====================================================
+             MATERIAIS
+             ===================================================== -->
+
+        <section
+            id="materiais"
+            class="dashboard-section"
+            data-page-section="materiais"
+            hidden
+        >
+
+            <div class="page-heading">
+
+                <div>
+
+                    <span class="section-label">
+                        CONTEÚDO
+                    </span>
+
+                    <h1>
+                        Materiais
+                    </h1>
+
+                    <p>
+                        Disponibilize arquivos e links para os estudantes.
+                    </p>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    class="primary-button"
+                    data-action="new-material"
+                >
+                    Adicionar material
+                </button>
+
+            </div>
+
+
+            <div class="materials-toolbar">
+
+                <label
+                    for="material-filter"
+                    class="sr-only"
+                >
+                    Filtrar materiais
+                </label>
+
+                <select
+                    id="material-filter"
+                    name="material-filter"
+                >
+
+                    <option value="all">
+                        Todas as turmas
+                    </option>
+
+                </select>
+
+
+                <input
+                    type="search"
+                    id="material-search"
+                    name="material-search"
+                    placeholder="Pesquisar materiais..."
+                >
+
+            </div>
+
+
+            <div
+                id="materials-container"
+                class="materials-list"
+                data-list="materials"
+            >
+            </div>
+
+
+            <dialog
+                id="material-dialog"
+                class="modal"
+            >
+
+                <form
+                    id="material-form"
+                    class="modal-content"
+                >
+
+                    <div class="modal-header">
+
+                        <div>
+
+                            <span class="section-label">
+                                MATERIAL
+                            </span>
+
+                            <h2>
+                                Adicionar material
+                            </h2>
+
+                        </div>
+
+                        <button
+                            type="button"
+                            class="modal-close"
+                            data-close-dialog
+                        >
+                            ×
+                        </button>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="material-title">
+                            Título
+                        </label>
+
+                        <input
+                            type="text"
+                            id="material-title"
+                            name="material-title"
+                            placeholder="Nome do material"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="material-description">
+                            Descrição
+                        </label>
+
+                        <textarea
+                            id="material-description"
+                            name="material-description"
+                            rows="4"
+                            placeholder="Descrição do material..."
+                        ></textarea>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="material-type">
+                            Tipo
+                        </label>
+
+                        <select
+                            id="material-type"
+                            name="material-type"
+                        >
+
+                            <option value="arquivo">
+                                Arquivo
+                            </option>
+
+                            <option value="link">
+                                Link
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="material-file">
+                            Arquivo
+                        </label>
+
+                        <input
+                            type="file"
+                            id="material-file"
+                            name="material-file"
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="material-url">
+                            Link
+                        </label>
+
+                        <input
+                            type="url"
+                            id="material-url"
+                            name="material-url"
+                            placeholder="https://..."
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Turmas destinadas
+                            <span class="required-indicator" aria-hidden="true">
+                                *
+                            </span>
+                        </label>
+
+                        <div
+                            id="material-classes-container"
+                            class="checkbox-group"
+                        >
+                        </div>
+
+                    </div>
+
+
+                    <div class="modal-actions">
+
+                        <button
+                            type="button"
+                            class="secondary-button"
+                            data-close-dialog
+                        >
+                            Cancelar
+                        </button>
+
+                        <button
+                            type="submit"
+                            class="primary-button"
+                        >
+                            Adicionar
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </dialog>
+
+        </section>
+
+
+        <!-- =====================================================
+             AVISOS
+             ===================================================== -->
+
+        <section
+            id="avisos"
+            class="dashboard-section"
+            data-page-section="avisos"
+            hidden
+        >
+
+            <div class="page-heading">
+
+                <div>
+
+                    <span class="section-label">
+                        COMUNICAÇÃO
+                    </span>
+
+                    <h1>
+                        Avisos
+                    </h1>
+
+                    <p>
+                        Publique informações importantes para suas turmas.
+                    </p>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    class="primary-button"
+                    data-action="new-announcement"
+                >
+                    Novo aviso
+                </button>
+
+            </div>
+
+
+            <div
+                id="announcements-container"
+                class="announcements-list"
+                data-list="announcements"
+            >
+            </div>
+
+
+            <dialog
+                id="announcement-dialog"
+                class="modal"
+            >
+
+                <form
+                    method="dialog"
+                    id="announcement-form"
+                    class="modal-content"
+                >
+
+                    <div class="modal-header">
+
+                        <div>
+
+                            <span class="section-label">
+                                AVISO
+                            </span>
+
+                            <h2>
+                                Novo aviso
+                            </h2>
+
+                        </div>
+
+                        <button
+                            type="button"
+                            class="modal-close"
+                            data-close-dialog
+                        >
+                            ×
+                        </button>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="announcement-title">
+                            Título
+                        </label>
+
+                        <input
+                            type="text"
+                            id="announcement-title"
+                            name="announcement-title"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="announcement-content">
+                            Mensagem
+                        </label>
+
+                        <textarea
+                            id="announcement-content"
+                            name="announcement-content"
+                            rows="6"
+                            required
+                        ></textarea>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Turmas destinadas
+                            <span class="required-indicator" aria-hidden="true">
+                                *
+                            </span>
+                        </label>
+
+                        <div
+                            id="announcement-classes-container"
+                            class="checkbox-group"
+                        >
+                        </div>
+
+                    </div>
+
+
+                    <div class="modal-actions">
+
+                        <button
+                            type="button"
+                            class="secondary-button"
+                            data-close-dialog
+                        >
+                            Cancelar
+                        </button>
+
+                        <button
+                            type="submit"
+                            class="primary-button"
+                        >
+                            Publicar aviso
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </dialog>
+
+        </section>
+
+
+        <!-- =====================================================
+             EDIÇÃO DE PERFIL
+             ===================================================== -->
+
+        <section
+            id="perfil-section"
+            class="dashboard-section"
+            data-page-section="perfil-section"
+            hidden
+        >
+
+            <div class="page-heading">
+
+                <div>
+
+                    <span class="section-label">
+                        PERFIL
+                    </span>
+
+                    <h1>
+                        Editar perfil
+                    </h1>
+
+                    <p>
+                        Atualize suas informações e foto de perfil.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="profile-edit-wrapper">
+
+                <form
+                    id="profile-form"
+                    class="profile-edit-form"
+                >
+
+                    <div class="profile-avatar-upload">
+
+                        <div class="profile-avatar-preview-wrapper">
+
+                            <img
+                                id="profile-avatar-preview"
+                                src=""
+                                alt="Preview do avatar"
+                                class="profile-avatar-preview"
+                            >
+
+                        </div>
+
+                        <div class="profile-avatar-actions">
+
+                            <input
+                                type="file"
+                                id="input-avatar-file"
+                                accept="image/*"
+                                style="display:none;"
+                            >
+
+                            <button
+                                type="button"
+                                class="secondary-button"
+                                id="btn-choose-avatar"
+                            >
+                                Escolher foto
+                            </button>
+
+                            <button
+                                type="button"
+                                class="secondary-button"
+                                id="btn-remove-avatar"
+                                style="display:none;"
+                            >
+                                Remover foto
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="prof-name">
+                            Nome Completo
+                        </label>
+
+                        <input
+                            type="text"
+                            id="prof-name"
+                            name="prof-name"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="prof-email">
+                            E-mail
+                        </label>
+
+                        <input
+                            type="email"
+                            id="prof-email"
+                            name="prof-email"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="prof-discipline">
+                            Disciplina/Área
+                        </label>
+
+                        <input
+                            type="text"
+                            id="prof-discipline"
+                            name="prof-discipline"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="prof-degree">
+                            Titulação Acadêmica
+                        </label>
+
+                        <input
+                            type="text"
+                            id="prof-degree"
+                            name="prof-degree"
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="prof-bio">
+                            Biografia/Apresentação
+                        </label>
+
+                        <textarea
+                            id="prof-bio"
+                            name="prof-bio"
+                            rows="4"
+                        ></textarea>
+
+                    </div>
+
+
+                    <div class="profile-form-actions">
+
+                        <button
+                            type="submit"
+                            class="primary-button"
+                        >
+                            Salvar Alterações
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             PERFIL (VISUALIZAÇÃO)
+             ===================================================== -->
+
+        <section
+            id="perfil"
+            class="dashboard-section"
+            data-page-section="perfil"
+            hidden
+        >
+
+            <div class="page-heading">
+
+                <div>
+
+                    <span class="section-label">
+                        CONTA
+                    </span>
+
+                    <h1>
+                        Meu perfil
+                    </h1>
+
+                    <p>
+                        Informações do professor responsável pela Sala Virtual.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <section class="profile-card">
+
+                <div class="profile-card-header">
+
+                    <div class="large-avatar">
+                        P
+                    </div>
+
+                    <div>
+
+                        <span class="section-label">
+                            PROFESSOR
+                        </span>
+
+                        <h2>
+                            Paulo César Barbosa de Melo
+                        </h2>
+
+                        <p>
+                            Professor de Ciências e Biologia
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="profile-information">
+
+                    <div class="profile-field">
+
+                        <span>
+                            Nome
+                        </span>
+
+                        <strong>
+                            Paulo César Barbosa de Melo
+                        </strong>
+
+                    </div>
+
+
+                    <div class="profile-field">
+
+                        <span>
+                            Área
+                        </span>
+
+                        <strong>
+                            Ciências e Biologia
+                        </strong>
+
+                    </div>
+
+
+                    <div class="profile-field">
+
+                        <span>
+                            Escola
+                        </span>
+
+                        <strong
+                            id="teacher-school"
+                        >
+                            Não informada
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="profile-actions">
+
+                    <button
+                        type="button"
+                        class="primary-button"
+                        data-action="edit-profile"
+                    >
+                        Editar perfil
+                    </button>
+
+                </div>
+
+            </section>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================================================
+         NOTIFICAÇÕES
+         ========================================================= -->
+
+    <div
+        id="toast-container"
+        class="toast-container"
+        aria-live="polite"
+        aria-atomic="true"
+    >
+    </div>
+
+
+    <dialog
+        id="modal-logout"
+        class="modal"
+    >
+
+        <form
+            method="dialog"
+            class="modal-content"
+        >
+
+            <div class="modal-header">
+
+                <div>
+
+                    <span class="section-label">
+                        SESSÃO
+                    </span>
+
+                    <h2>
+                        Deseja realmente sair?
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <p>
+                Você será redirecionado para a tela de login.
+            </p>
+
+
+            <div class="modal-actions">
+
+                <button
+                    type="button"
+                    class="secondary-button"
+                    data-close-dialog
+                >
+                    Não, continuar
+                </button>
+
+                <button
+                    type="submit"
+                    class="primary-button"
+                    id="confirm-logout"
+                >
+                    Sim, sair
+                </button>
+
+            </div>
+
+        </form>
+
+    </dialog>
+
+
+    <!-- =========================================================
+         JAVASCRIPT
+         ========================================================= -->
+
+    <script
+        src="../js/app.js"
+        defer
+    ></script>
+
+</body>
+
+</html>

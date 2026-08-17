@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Painel do estudante - Sala Virtual."
+    >
+
+    <title>Estudante | Sala Virtual</title>
+
+    <link
+        rel="stylesheet"
+        href="../css/style.css"
+    >
+
+</head>
+
+<body
+    class="dashboard-page student-page"
+    data-user-type="estudante"
+>
+
+    <!-- =========================================================
+         CABEÇALHO
+         ========================================================= -->
+
+    <header class="dashboard-header">
+
+        <div class="header-content">
+
+            <a
+                href="estudante.html"
+                class="dashboard-brand"
+                aria-label="Ir para o início"
+            >
+
+                    <img
+                        src="../png-transparent-computer-icons-newspaper-reading-book-text-reading-share-icon (1).png"
+                        alt="Logo Sala Virtual"
+                        class="logo-image"
+                    >
+
+                <span class="dashboard-brand-text">
+
+                    <strong>
+                        Sala Virtual
+                    </strong>
+
+                    <small>
+                        Ciências e Biologia
+                    </small>
+
+                </span>
+
+            </a>
+
+
+            <!-- Navegação -->
+            <nav
+                class="main-navigation"
+                aria-label="Navegação principal"
+            >
+
+                <a
+                    href="#inicio"
+                    class="nav-link active"
+                    data-section="inicio"
+                >
+                    Início
+                </a>
+
+                <a
+                    href="#turmas"
+                    class="nav-link"
+                    data-section="turmas"
+                >
+                    Turmas
+                </a>
+
+                <a
+                    href="#materiais"
+                    class="nav-link"
+                    data-section="materiais"
+                >
+                    Materiais
+                </a>
+
+                <a
+                    href="#avisos"
+                    class="nav-link"
+                    data-section="avisos"
+                >
+                    Avisos
+                </a>
+
+                <a
+                    href="#perfil"
+                    class="nav-link"
+                    data-section="perfil"
+                >
+                    Perfil
+                </a>
+
+            </nav>
+
+
+            <div class="header-user">
+
+                <button
+                    type="button"
+                    class="user-menu-button"
+                    id="student-user-menu"
+                    aria-expanded="false"
+                >
+
+                    <span class="user-avatar">
+                        E
+                    </span>
+
+                    <span>
+                        Estudante
+                    </span>
+
+                </button>
+
+
+                <button
+                    type="button"
+                    class="logout-button"
+                    data-logout
+                >
+                    Sair
+                </button>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- =========================================================
+         CONTEÚDO
+         ========================================================= -->
+
+    <main class="dashboard-main">
+
+        <!-- =====================================================
+             INÍCIO
+             ===================================================== -->
+
+        <section
+            id="inicio"
+            class="dashboard-section active-section"
+            data-page-section="inicio"
+        >
+
+            <div class="page-heading">
+
+                <div>
+
+                    <span class="section-label">
+                        ÁREA DO ESTUDANTE
+                    </span>
+
+                    <h1>
+                        Olá, estudante
+                    </h1>
+
+                    <p>
+                        Acompanhe suas turmas, materiais e avisos.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- Resumo -->
+            <section
+                class="overview-grid"
+                aria-label="Resumo do estudante"
+            >
+
+                <article class="overview-card">
+
+                    <span class="overview-icon">
+                        T
+                    </span>
+
+                    <div>
+
+                        <span>
+                            Turmas
+                        </span>
+
+                        <strong
+                            id="count-turmas"
+                            data-stat="student-classes"
+                        >
+                            0
+                        </strong>
+
+                    </div>
+
+                </article>
+
+
+                <article class="overview-card">
+
+                    <span class="overview-icon">
+                        M
+                    </span>
+
+                    <div>
+
+                        <span>
+                            Materiais
+                        </span>
+
+                        <strong
+                            id="count-materiais"
+                            data-stat="student-materials"
+                        >
+                            0
+                        </strong>
+
+                    </div>
+
+                </article>
+
+
+                <article class="overview-card">
+
+                    <span class="overview-icon">
+                        A
+                    </span>
+
+                    <div>
+
+                        <span>
+                            Avisos
+                        </span>
+
+                        <strong
+                            id="count-avisos"
+                            data-stat="student-announcements"
+                        >
+                            0
+                        </strong>
+
+                    </div>
+
+                </article>
+
+            </section>
+
+
+            <!-- Turmas -->
+            <section class="dashboard-block">
+
+                <div class="block-header">
+
+                    <div>
+
+                        <span class="section-label">
+                            MINHAS TURMAS
+                        </span>
+
+                        <h2>
+                            Turmas
+                        </h2>
+
+                    </div>
+
+                    <button
+                        type="button"
+                        class="secondary-button"
+                        data-navigate-section="turmas"
+                    >
+                        Ver turmas
+                    </button>
+
+                </div>
+
+
+                <div
+                    id="student-class-list"
+                    class="class-grid"
+                    data-list="student-classes"
+                >
+                </div>
+
+            </section>
+
+
+            <!-- Últimos avisos -->
+            <section class="dashboard-block">
+
+                <div class="block-header">
+
+                    <div>
+
+                        <span class="section-label">
+                            COMUNICAÇÃO
+                        </span>
+
+                        <h2>
+                            Últimos avisos
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    id="student-recent-announcements"
+                    class="announcements-list"
+                    data-list="student-announcements"
+                >
+                </div>
+
+            </section>
+
+        </section>
+
+
+        <!-- =====================================================
+             MINHAS TURMAS
+             ===================================================== -->
+
+        <section
+            id="turmas"
+            class="dashboard-section"
+            data-page-section="turmas"
+            hidden
+        >
+
+            <div class="page-heading">
+
+                <div>
+
+                    <span class="section-label">
+                        ORGANIZAÇÃO
+                    </span>
+
+                    <h1>
+                        Turmas
+                    </h1>
+
+                    <p>
+                        Acesse os espaços das suas aulas.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div
+                id="student-classes-container"
+                class="class-grid"
+                data-list="student-classes"
+            >
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             MATERIAIS
+             ===================================================== -->
+
+        <section
+            id="materiais"
+            class="dashboard-section"
+            data-page-section="materiais"
+            hidden
+        >
+
+            <div class="page-heading">
+
+                <div>
+
+                    <span class="section-label">
+                        CONTEÚDO
+                    </span>
+
+                    <h1>
+                        Materiais
+                    </h1>
+
+                    <p>
+                        Acesse os arquivos e links disponibilizados pelo professor.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="materials-toolbar">
+
+                <label
+                    for="student-material-search"
+                    class="sr-only"
+                >
+                    Pesquisar materiais
+                </label>
+
+                <input
+                    type="search"
+                    id="student-material-search"
+                    placeholder="Pesquisar materiais..."
+                >
+
+            </div>
+
+
+            <div
+                id="student-materials-container"
+                class="materials-list"
+                data-list="student-materials"
+            >
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             AVISOS
+             ===================================================== -->
+
+        <section
+            id="avisos"
+            class="dashboard-section"
+            data-page-section="avisos"
+            hidden
+        >
+
+            <div class="page-heading">
+
+                <div>
+
+                    <span class="section-label">
+                        COMUNICAÇÃO
+                    </span>
+
+                    <h1>
+                        Avisos
+                    </h1>
+
+                    <p>
+                        Consulte os comunicados publicados pelo professor.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div
+                id="student-announcements-container"
+                class="announcements-list"
+                data-list="student-announcements"
+            >
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             PERFIL
+             ===================================================== -->
+
+        <section
+            id="perfil"
+            class="dashboard-section"
+            data-page-section="perfil"
+            hidden
+        >
+
+            <div class="page-heading">
+
+                <div>
+
+                    <span class="section-label">
+                        CONTA
+                    </span>
+
+                    <h1>
+                        Meu perfil
+                    </h1>
+
+                    <p>
+                        Informações da sua conta na Sala Virtual.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <section class="profile-card">
+
+                <div class="profile-card-header">
+
+                    <div class="large-avatar">
+                        E
+                    </div>
+
+                    <div>
+
+                        <span class="section-label">
+                            ESTUDANTE
+                        </span>
+
+                        <h2
+                            id="student-name"
+                        >
+                            Estudante
+                        </h2>
+
+                        <p>
+                            Sala Virtual
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="profile-information">
+
+                    <div class="profile-field">
+
+                        <span>
+                            Nome
+                        </span>
+
+                        <strong
+                            id="student-profile-name"
+                        >
+                            Estudante
+                        </strong>
+
+                    </div>
+
+
+                    <div class="profile-field">
+
+                        <span>
+                            Turmas
+                        </span>
+
+                        <strong
+                            id="student-profile-classes"
+                        >
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================================================
+         NOTIFICAÇÕES
+         ========================================================= -->
+
+    <div
+        id="toast-container"
+        class="toast-container"
+        aria-live="polite"
+        aria-atomic="true"
+    >
+    </div>
+
+
+    <dialog
+        id="modal-logout"
+        class="modal"
+    >
+
+        <form
+            method="dialog"
+            class="modal-content"
+        >
+
+            <div class="modal-header">
+
+                <div>
+
+                    <span class="section-label">
+                        SESSÃO
+                    </span>
+
+                    <h2>
+                        Deseja realmente sair?
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <p>
+                Você será redirecionado para a tela de login.
+            </p>
+
+
+            <div class="modal-actions">
+
+                <button
+                    type="button"
+                    class="secondary-button"
+                    data-close-dialog
+                >
+                    Não, continuar
+                </button>
+
+                <button
+                    type="submit"
+                    class="primary-button"
+                    id="confirm-logout"
+                >
+                    Sim, sair
+                </button>
+
+            </div>
+
+        </form>
+
+    </dialog>
+
+
+    <!-- =========================================================
+         JAVASCRIPT
+         ========================================================= -->
+
+    <script
+        src="../js/app.js"
+        defer
+    ></script>
+
+</body>
+
+</html>
